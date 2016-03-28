@@ -1,7 +1,14 @@
 Chessapp::Application.routes.draw do
   devise_for :users
   root 'static_pages#index'
-  resources :games 
+  resources :games, only: [:index, :show] do
+    resources :enrollments, only: :create 
+    end   
+
+  namespace :creator do 
+    resources :games, only: [:new, :create, :show] do 
+    end 
+  end 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
