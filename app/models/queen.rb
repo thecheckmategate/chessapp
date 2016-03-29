@@ -1,2 +1,2 @@
-class Queen < ActiveRecord::Base
+class Queen < Piece
 end

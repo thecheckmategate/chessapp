@@ -1,2 +1,2 @@
-class Rook < ActiveRecord::Base
+class Rook < Piece
 end

@@ -1,2 +1,2 @@
-class King < ActiveRecord::Base
+class King < Piece
 end

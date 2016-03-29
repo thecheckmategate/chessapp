@@ -1,2 +1,2 @@
-class Pawn < ActiveRecord::Base
+class Pawn < Piece
 end

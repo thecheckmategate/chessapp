@@ -1,2 +1,2 @@
-class Bishop < ActiveRecord::Base
+class Bishop < Piece 
 end
