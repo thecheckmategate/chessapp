@@ -1,6 +1,5 @@
 Chessapp::Application.configure do
-  # run heroku apps:info upon deployment then paste correct link below  
-  # config.action_mailer.default_url_options = { host: 'appname.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'pawnstars-firehose.herokuapp.com' }
 
   # Settings specified here will take precedence over those in config/application.rb.
 
