@@ -9,7 +9,7 @@
 <body>
 
 
-<div id="wrap"> 
+<div id="wrap">
 <nav class="navbar navbar-inverse" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -21,31 +21,33 @@
         <span class="icon-bar"></span>
       </button>
         <!-- <a class="navbar-brand" href="#">Flixter</a> -->
-        <%= link_to "Chessapp", root_path, class: "navbar-brand" %> 
+        <%= link_to "Chessapp", root_path, class: "navbar-brand" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <!-- <li><a href="#">Link</a></li> -->
-        <li> 
-          <%= link_to 'Create Game', '#' %>
-        </li> 
-         <li> 
+        <% if user_signed_in? %>
+        <li>
+          <%= link_to 'Create Game', new_game_path %>
+        </li>
+        <% end %>
+         <li>
           <%= link_to 'See All Games', '#' %>
-        </li> 
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <% if user_signed_in? %>
-        <li><%= link_to 'My Dashboard', '#' %></li> 
+        <li><%= link_to 'My Dashboard', '#' %></li>
         <li><%= link_to destroy_user_session_path, method: :delete do %>
             <span class="glyphicon glyphicon-ok-sign"></span>
-          Sign Out 
-          <% end %> 
+          Sign Out
+          <% end %>
         </li>
 
-      <% else %> 
-        <li><%= link_to 'Sign In', new_user_session_path %></li>  
+      <% else %>
+        <li><%= link_to 'Sign In', new_user_session_path %></li>
         <li><%= link_to 'Sign Up', new_user_registration_path %></li>
         <% end %>
       </ul>
