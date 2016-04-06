@@ -68,6 +68,14 @@ class Game < ActiveRecord::Base
 	    King.create(game_id: id, x_position: 4, y_position: 7)
   	end
 
+  	def occupied?(id) 
+  		id != nil 
+  	end 
+
+  	def full? 
+  		white_id != nil && black_id != nil 
+  	end 
+
 
  end 
 

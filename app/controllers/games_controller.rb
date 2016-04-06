@@ -1,6 +1,6 @@
 class GamesController < ApplicationController
 	before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
-	before_action :find_game!, only: [:show, :edit, :update]
+	before_action :find_game!, only: [:show, :edit, :update, :join]
 
 	def index
 		@game = Game.all
@@ -16,18 +16,24 @@ class GamesController < ApplicationController
 	end
 
 	def join 
+		# find_game
+		if @game.occupied?(white_id)
+			@game.update_attributes(black_id: user_id) unless @game.full? 
+		else 
+			@game.update_attribute(white_id: user_id) unless @game.full? 
+		end 
 	end 
 
 	def show
-		
+		# find_game
 	end
 
 	def edit
-		
+		# find_game
 	end 
 
 	def update 
-		# update color 
+		# find_game 
 	end
 
 private
