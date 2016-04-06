@@ -10,10 +10,10 @@ INDEX PAGE<br /><br />
 	User ID (person who created the game): <%= game.user_id %><br />
 	<%= link_to "Join In", join_game_path(game), method: :put, class: 'btn btn-primary' %>
 	
-	<% if @game.full? %> 
+	<% if game.full? %> 
 		<%= "Full" %> 
 	<% else %> 
 		<%= "Not Full" %>
 	<% end %>
-	
+
 <% end %> 
