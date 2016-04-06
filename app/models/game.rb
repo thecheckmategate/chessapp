@@ -5,7 +5,6 @@ class Game < ActiveRecord::Base
 	has_many :pieces
 	belongs_to :user 
 
-
 	def set_board 
 =begin
 	creating the each pieces here
@@ -13,7 +12,7 @@ class Game < ActiveRecord::Base
 	the image isn't a big deal right now and more of an HTML/JavaScript thing that can be hashed out 
 	however the user_is critical to linking which piece is whose 
 	that can be updated later in the games controller with the update method 
-	
+
 
 	chessboard setup array of arrays 
 	[[rook, knight, bishop, king, queen, bishop, knight, rook] 
@@ -67,7 +66,10 @@ class Game < ActiveRecord::Base
 
 	    Queen.create(game_id: id, x_position: 3, y_position: 7)
 	    King.create(game_id: id, x_position: 4, y_position: 7)
-  end
+  	end
+
+
+ end 
 
 
 
