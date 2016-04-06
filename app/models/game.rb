@@ -5,7 +5,7 @@ class Game < ActiveRecord::Base
 	has_many :pieces
 	belongs_to :user 
 
-	def set_board 
+	def set_board!
 =begin
 	creating the each pieces here
 	note that we are still missing the fields for user_id and image 
@@ -68,9 +68,6 @@ class Game < ActiveRecord::Base
 	    King.create(game_id: id, x_position: 4, y_position: 7)
   	end
 
-  	def occupied?(id) 
-  		id != nil 
-  	end 
 
   	def full? 
   		white_id != nil && black_id != nil 

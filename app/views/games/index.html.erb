@@ -1,13 +1,19 @@
-INDEX PAGE 
+INDEX PAGE<br /><br />
 
 <% @games.each do |game| %> 
 
-	Name <%= game.name %>
-	Created At <%= game.created_at %>
-	Description <%= game.description %> 
-	White ID <%= game.white_id %>
-	Black ID <%= game.black_id %>
-	User ID <%= game.user_id %>
-	<%= link_to "Join In", join_game_path(game), class: 'btn btn-primary' %>
-
+	Name: <%= game.name %><br />
+	Created At: <%= game.created_at %><br />
+	Description: <%= game.description %><br />
+	White ID: <%= game.white_id %><br />
+	Black ID: <%= game.black_id %><br />
+	User ID (person who created the game): <%= game.user_id %><br />
+	<%= link_to "Join In", join_game_path(game), method: :put, class: 'btn btn-primary' %>
+	
+	<% if @game.full? %> 
+		<%= "Full" %> 
+	<% else %> 
+		<%= "Not Full" %>
+	<% end %>
+	
 <% end %> 
