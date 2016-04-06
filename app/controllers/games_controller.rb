@@ -21,6 +21,7 @@ class GamesController < ApplicationController
 		else 
 			@game.update_attribute(white_id: current_user.id) unless @game.full? 
 		end 
+		#assign method here 
 		redirect_to games_path 
 	end 
 
