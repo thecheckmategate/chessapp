@@ -15,8 +15,7 @@ class GamesController < ApplicationController
 		redirect_to games_path  
 	end
 
-	def join 
-		# find_game
+	def join
 		if @game.white_id.present?
 			@game.update_attributes(black_id: current_user.id) unless @game.full? 
 		else 
@@ -26,15 +25,12 @@ class GamesController < ApplicationController
 	end 
 
 	def show
-		# find_game
 	end
 
 	def edit
-		# find_game
 	end 
 
 	def update 
-		# find_game 
 	end
 
 private

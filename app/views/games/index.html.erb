@@ -11,9 +11,10 @@ INDEX PAGE<br /><br />
 	<%= link_to "Join In", join_game_path(game), method: :put, class: 'btn btn-primary' %>
 	
 	<% if game.full? %> 
-		<%= "Full" %> 
+		<%= "2/2 Full" %> 
 	<% else %> 
-		<%= "Not Full" %>
+		<%= "1/2 Not Full" %>
+		<%= game.white_id.count + game.black_id.count %>
 	<% end %>
 
 <% end %> 
