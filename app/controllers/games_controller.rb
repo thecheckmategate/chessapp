@@ -3,7 +3,7 @@ class GamesController < ApplicationController
 	before_action :find_game!, only: [:show, :edit, :update, :join]
 
 	def index
-		@game = Game.all
+		@games = Game.all
 	end
 
 	def new

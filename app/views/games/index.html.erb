@@ -1,1 +1,12 @@
-<h1>Index</h1> 
+INDEX PAGE 
+
+<% @games.each do |game| %> 
+
+	Name <%= game.name %>
+	Created At <%= game.created_at %>
+	Description <%= game.description %> 
+	White ID <%= game.white_id %>
+	Black ID <%= game.black_id %>
+	User ID <%= game.user_id %>
+
+<% end %> 
