@@ -34,7 +34,7 @@
         </li>
         <% end %>
          <li>
-          <%= link_to 'See All Games', '#' %>
+          <%= link_to 'See All Games', games_path %>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -49,6 +49,7 @@
       <% else %>
         <li><%= link_to 'Sign In', new_user_session_path %></li>
         <li><%= link_to 'Sign Up', new_user_registration_path %></li>
+        <li><%= link_to 'Create New Game', new_game_path %></li>
         <% end %>
       </ul>
 

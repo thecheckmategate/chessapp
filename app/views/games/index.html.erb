@@ -8,5 +8,6 @@ INDEX PAGE
 	White ID <%= game.white_id %>
 	Black ID <%= game.black_id %>
 	User ID <%= game.user_id %>
+	<%= link_to "Join In", join_game_path(game), class: 'btn btn-primary' %>
 
 <% end %> 
