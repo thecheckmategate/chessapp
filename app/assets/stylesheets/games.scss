@@ -1,3 +1,21 @@
-// Place all the styles related to the games controller here.
+/*// Place all the styles related to the games controller here.
 // They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// You can use Sass (SCSS) here: http://sass-lang.com/*/
+
+
+
+/* Table CSS version of game board - rest of Table code in the games#show file
+
+table {
+	margin: 0 auto;
+	border-collapse: collapse;
+	background: black;
+	border: 5px  solid #333;
+}
+td {
+    width: 60px; height: 60px;
+}
+
+tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
+	background: white;
+}*/
