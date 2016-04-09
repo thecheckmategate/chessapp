@@ -12,33 +12,35 @@ class GamesController < ApplicationController
 
 	def create
 		@game = current_user.games.create(game_params)
-		redirect_to games_path  
+		redirect_to games_path
 	end
 
 	def join
 		if @game.white_id.present?
-			@game.update_attributes(black_id: current_user.id) unless @game.full? 
-		else 
-			@game.update_attribute(white_id: current_user.id) unless @game.full? 
-		end 
-		@game.set_board 
-		redirect_to games_path 
-	end 
+			@game.update_attributes(black_id: current_user.id) unless @game.full?
+		else
+			@game.update_attribute(white_id: current_user.id) unless @game.full?
+		end
+		@game.set_board
+		redirect_to games_path
+	end
 
 	def show
+
 	end
 
 	def edit
-	end 
+	end
 
-	def update 
+	def update
+		# @game = Game.find(params[:id])
 	end
 
 private
-	
-	def find_game! 
+
+	def find_game!
 		@game ||= Game.find(params[:id])
-	end 
+	end
 
 	def game_params
 		params.require(:game).permit(:white_id, :black_id, :user_id, :name, :description)
