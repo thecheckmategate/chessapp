@@ -1,6 +1,6 @@
 INDEX PAGE<br /><br />
 
-<% @games.each do |game| %> 
+<% @games.each do |game| %>
 
 	Name: <%= game.name %><br />
 	Created At: <%= game.created_at %><br />
@@ -9,11 +9,11 @@ INDEX PAGE<br /><br />
 	Black ID: <%= game.black_id %><br />
 	User ID (person who created the game): <%= game.user_id %><br />
 	<%= link_to "Join In", join_game_path(game), method: :put, class: 'btn btn-primary' %>
-	
-	<% if game.full? %> 
-		<%= "2/2 Full" %> 
-	<% else %> 
+
+	<% if game.full? %>
+		<%= "2/2 Full" %>
+	<% else %>
 		<%= "1/2 Not Full" %>
 	<% end %>
 
-<% end %> 
+<% end %>
