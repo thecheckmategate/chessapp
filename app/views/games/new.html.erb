@@ -4,6 +4,6 @@ Create Game
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :white_id, :as => :hidden, :input_html => { :value => current_user.id } %>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Create', class: 'btn btn-primary'%>
 
     <% end %>
