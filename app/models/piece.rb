@@ -14,6 +14,11 @@ class Piece < ActiveRecord::Base
 		(x_position == x_target) && (y_position == y_target)
 	end 
 
+	def obstacle_between(x_target, y_target)
+		return false if diagonal_obstruction?(x_target, y_target).include?([x_target, y_target)
+		return false if rectilinear_collection?(x_target, y_target).include?([x_target, y_target])
+	end 
+
 
 	def self.find_by_position(x, y, game_id)
 		Piece.where(x_position: x, y_position: y, game_id: game_id).first
