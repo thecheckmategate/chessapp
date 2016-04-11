@@ -19,6 +19,10 @@ class Piece < ActiveRecord::Base
 		return false if rectilinear_collection?(x_target, y_target).include?([x_target, y_target])
 	end 
 
+	def on_board?(x_target, y_target)
+		false unless (0 <= x_target <= 7) && (0 <= y_target <= 7)
+	end 
+
 
 	def self.find_by_position(x, y, game_id)
 		Piece.where(x_position: x, y_position: y, game_id: game_id).first
