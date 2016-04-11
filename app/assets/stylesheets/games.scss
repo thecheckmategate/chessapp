@@ -9,11 +9,20 @@
 table {
 	margin: 0 auto;
 	border-collapse: collapse;
-	background: black;
+	background: #999;
 	border: 5px  solid #333;
 }
+
 td {
     width: 60px; height: 60px;
+}
+
+.pieces {
+    float: center;
+    font-size: 35px;
+    text-align:center;
+    display: table-cell;
+    vertical-align:middle;
 }
 
 tr:nth-child(odd) td:nth-child(even), tr:nth-child(even) td:nth-child(odd) {
