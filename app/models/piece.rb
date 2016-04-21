@@ -15,11 +15,8 @@ def move_to!(new_x, new_y)
 # If the piece is there and it’s the same color the move should fail - it should either raise an error message or do nothing.
 # It should call update_attributes on the piece and change the piece’s x/y position.
 
-# -----------------------------------------------------------------------------------------
-# Update attributes will not check for validation...... What about using .update ???
-# ---------------------------------------------------------------------------------- Eric--
 
-
+self.update_attributes(:x_position => new_x, :y_position => new_y) unless (new_x.presence && new_y.presence)
 
 
 end
