@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(version: 20160329004854) do
   end
 
   create_table "pieces", force: true do |t|
+    t.string   "piece_name"
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"

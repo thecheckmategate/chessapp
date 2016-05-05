@@ -1,5 +1,8 @@
 class PiecesController < ApplicationController
-	
+	def create
+		@pieces = current_game.pieces.create(piece_params)
+	end
+
 	def show
 		@piece = Piece.find(params[:id])
 	end
@@ -16,5 +19,9 @@ class PiecesController < ApplicationController
 
 	def piece_params
 		params.require(:piece).permit(:game_id, :user_id, :type, :image, :x_position, :y_position)
+	end
+
+	def current_game
+		@current_game ||= Game.find(params[:id])
 	end
 end
