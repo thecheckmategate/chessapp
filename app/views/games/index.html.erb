@@ -2,12 +2,12 @@
 
 <% @games.each do |game| %>
 
-	Name: <%= game.name %><br>
-	<!-- Created At: <%= game.created_at %><br> -->
-	<!-- Description: <%= game.description %><br> -->
-	White Player: <%= game.white.email if game.white %><br>
-	Black Player: <%= game.black.email unless game.black.nil? %><br>
-	<!-- User ID (person who created the game): <%= game.user_id %><br> -->
+	Name: <%= game.name %><br />
+	<!-- Created At: <%= game.created_at %><br />
+	Description: <%= game.description %><br /> -->
+	White Player: <%= game.white_player.email if game.white_player %><br>
+	Black Player: <%= game.black_player.email unless game.black_player.nil? %><br>
+	<!-- User ID (person who created the game): <%= game.user_id %><br /> -->
 	<%= link_to "Join In", join_game_path(game), method: :put, class: 'btn btn-primary' %>
 
 	<% if game.full? %>
