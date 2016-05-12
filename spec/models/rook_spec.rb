@@ -8,4 +8,10 @@ RSpec.describe Rook, type: :model do
   	expect(rook.executable_move?(2,4)).to be_truthy
   end
 
+  it "does a valid move" do 
+  	Rook.create(x_position: 2, y_position: 2)
+  	rook = Rook.last
+  	expect(rook.executable_move?(3,3)).to be_falsey
+  end
+
 end

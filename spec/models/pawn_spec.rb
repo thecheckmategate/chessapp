@@ -1,5 +1,17 @@
 require 'rails_helper'
 
 RSpec.describe Pawn, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it "does a valid move" do 
+  	Pawn.create(x_position: 2, y_position: 2)
+  	pawn = Pawn.last
+  	expect(pawn.executable_move?(2,3)).to be_truthy
+  end
+
+  it "does a valid move" do 
+  	Pawn.create(x_position: 2, y_position: 2)
+  	pawn = Pawn.last
+  	expect(pawn.executable_move?(4,4)).to be_falsey
+  end
+
 end
