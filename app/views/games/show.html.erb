@@ -12,8 +12,17 @@
 
     <% 8.times do |col_index|  %>
       <td>
-          #code goes here
+          <% def piece_by_position(game, x, y)
+            piece = game.piece_at(x,y)
+            if piece.nil?
+              return ""
+            else
+            return piece.to_ascii_piece
+            end
+          end %>
+
       </td>
     <% end %>
   </tr>
 <% end %>
+</table>
