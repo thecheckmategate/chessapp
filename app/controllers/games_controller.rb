@@ -22,7 +22,7 @@ class GamesController < ApplicationController
 			@game.update_attribute(white_id: current_user.id) unless @game.full? 
 		end 
 		@game.set_board 
-		redirect_to game_path 
+		redirect_to games_path 
 	end 
 
 	def show
