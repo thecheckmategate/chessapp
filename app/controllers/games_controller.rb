@@ -12,7 +12,7 @@ class GamesController < ApplicationController
 
 	def create
 		@game = current_user.games.create(game_params)
-		redirect_to games_path  
+		redirect_to game_path(@game)
 	end
 
 	def join
@@ -22,7 +22,7 @@ class GamesController < ApplicationController
 			@game.update_attribute(white_id: current_user.id) unless @game.full? 
 		end 
 		@game.set_board 
-		redirect_to game_path 
+		redirect_to game_path(@game)
 	end 
 
 	def show
@@ -32,7 +32,8 @@ class GamesController < ApplicationController
 	def edit
 	end 
 
-	def update 
+	def update
+		
 	end
 
 private
