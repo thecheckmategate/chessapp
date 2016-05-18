@@ -8,8 +8,14 @@
 	White Player: <%= game.white_player.email if game.white_player %><br>
 	Black Player: <%= game.black_player.email unless game.black_player.nil? %><br>
 	<!-- User ID (person who created the game): <%= game.user_id %><br /> -->
-	<%= link_to "Join In", join_game_path(game), method: :put, class: 'btn btn-primary' %>
 
+	<!-- By implementing this logic, no one can "join" their own game against themselves. -->
+	<% if game.user_id == current_user.id %>
+		<%= link_to "Go to game", game_path(game), class: 'btn btn-success' %>
+	<% else %>
+		<%= link_to "Join In", join_game_path(game), method: :put, class: 'btn btn-primary' %>
+	<% end %>
+	
 	<% if game.full? %>
 		<%= "2/2 Full" %>
 	<% else %>
