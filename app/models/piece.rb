@@ -9,6 +9,15 @@ class Piece < ActiveRecord::Base
 	def color_check
 		color ? 'white_id' : 'black_id'
 	end
+	def number_of_moves?
+		counter_array = []
+		for i in 0..7
+			for i in 0..7 
+				counter_array.append(executable_move?(i,i))
+			end
+		end  
+		counter_array.count(true)
+	end 
 
 	def executable_move?(x_target, y_target)
 		return false unless valid_move?(x_target, y_target)
@@ -38,6 +47,15 @@ class Piece < ActiveRecord::Base
 	def on_board?(x_target, y_target)
 		(0 <= x_target && x_target <= 7) && (0 <= y_target && y_target <= 7)
 	end
+
+	def move_to!(x_target, y_target)
+		if executable_move?(x_target, y_target)
+			target_piece = Piece.find_by_position(x_target, y_target, game_id) 
+			self.update_attributes(x_position: x_target, y_position: y_target) if target_piece.blank? || target_piece.color != self.color 
+		else 
+			return false 
+		end 
+	end 
 
 	def self.find_by_position(x, y, game_id)
 		Piece.where(x_position: x, y_position: y, game_id: game_id).first

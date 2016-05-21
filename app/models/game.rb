@@ -1,5 +1,4 @@
 class Game < ActiveRecord::Base
-	# in rails an exclamantion point means that the method will throw exception on failure rather than silent failure
 
 	has_many :pieces
 	belongs_to :user
@@ -9,25 +8,7 @@ class Game < ActiveRecord::Base
 	validates :name, :presence => true
 
 	def set_board
-=begin
-	creating the each pieces here
-	note that we are still missing the fields for user_id and image
-	the image isn't a big deal right now and more of an HTML/JavaScript thing that can be hashed out
-	however the user_is critical to linking which piece is whose
-	that can be updated later in the games controller with the update method
 
-
-	chessboard setup array of arrays
-	[[rook, knight, bishop, king, queen, bishop, knight, rook]
-	[pawn, pawn,   pawn,   pawn, pawn,  pawn,   pawn,   pawn]
-	[empt, empt,   empt,   empt, empt,  empt    empt,   empt]
-	[empt, empt,   empt,   empt, empt,  empt    empt,   empt]
-	[empt, empt,   empt,   empt, empt,  empt    empt,   empt]
-	[empt, empt,   empt,   empt, empt,  empt    empt,   empt]
-	[pawn, pawn,   pawn,   pawn, pawn,  pawn,   pawn,   pawn]
-	[rook, knight, bishop, king, queen, bishop, knight, rook]]
-=end
-	# bottom side black player
 	    [*0..7].each do |position|
 	      Pawn.create(
 	        game_id: id,
