@@ -6,13 +6,12 @@ class Pawn < Piece
 	def valid_move?(x_target, y_target) 
 		if color == 'black' 
 			(y_position - y_target == 1) && (x_position == x_target) 
-			y_position - y_target == 2 if y_position == 1
-			
+			y_position - y_target == 2 if y_position == 1	
 		else 
 			(y_position - y_target == -1) && (x_position == x_target) 
 			(y_position - y_target == -2) if y_position == 6			
-			
-		end 
+		end  
+
 	end 
 
 end
