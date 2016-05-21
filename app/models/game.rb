@@ -3,7 +3,6 @@ class Game < ActiveRecord::Base
 
 	has_many :pieces
 	belongs_to :user
-
 	belongs_to :white_player, :class_name => 'User', :foreign_key => 'white_id'
 	belongs_to :black_player, :class_name => 'User', :foreign_key => 'black_id'
 
