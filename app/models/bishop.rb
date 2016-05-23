@@ -1,7 +1,6 @@
 class Bishop < Piece
 	def to_ascii_piece
-		color ? 'white_id' : 'black_id'
-		"&#9821;".html_safe
+		color == 'white' ? '&#9815;' : '&#9821;'
 	end
 
 	def valid_move?(x_target, y_target)

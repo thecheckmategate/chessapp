@@ -1,7 +1,6 @@
 class Rook < Piece
   def to_ascii_piece
-    color ? 'white_id' : 'black_id'
-    "&#9820;".html_safe
+    color == 'white' ? '&#9814;' : '&#9820;'
   end
 
 	def valid_move?(x_target, y_target)

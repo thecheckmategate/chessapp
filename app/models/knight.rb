@@ -1,7 +1,6 @@
 class Knight < Piece
 	def to_ascii_piece
-		color ? 'white_id' : 'black_id'
-		"&#9822;".html_safe
+		color == 'white' ? '&#9816;' : '&#9822;'
 	end
 
 	def valid_move?(x_target, y_target)

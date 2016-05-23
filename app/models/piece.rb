@@ -3,6 +3,9 @@ class Piece < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :game
 
+	def color
+	end
+
 	def color_check
 		color ? 'white_id' : 'black_id'
 	end

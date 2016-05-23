@@ -1,7 +1,6 @@
 class King < Piece
 	def to_ascii_piece
-		color ? 'white_id' : 'black_id'
-		"&#9818;".html_safe
+		color == 'white' ? '&#9812;' : '&#9818;'
 	end
 
 	def valid_move?(x_target, y_target)

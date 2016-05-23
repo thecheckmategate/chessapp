@@ -1,7 +1,6 @@
 class Pawn < Piece
 	def to_ascii_piece
-		color ? 'white_id' : 'black_id'
-		"&#9823;".html_safe
+		color == 'white' ? '&#9817;' : '&#9823;'
 	end
 
 	def valid_move?(x_target, y_target)
