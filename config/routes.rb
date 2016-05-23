@@ -4,7 +4,8 @@ Chessapp::Application.routes.draw do
   resources :games do 
   member do 
     put 'join'
-  end 
+  end
+  resources :pieces, :only => [:show, :update] 
 end 
 
   # The priority is based upon order of creation: first created -> highest priority.

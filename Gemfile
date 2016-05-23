@@ -31,10 +31,11 @@ gem 'simple_form'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 
-
+# Packages jQuery UI assets (Javascripts, stylesheets and images) for Rails asset pipeline
+gem 'jquery-ui-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
-gem 'turbolinks'
+# gem 'turbolinks'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
