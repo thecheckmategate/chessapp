@@ -1,8 +1,8 @@
 class PiecesController < ApplicationController
 	
 	def show
-		seleced_piece = Piece.find(params[:game_id])
-		@pieces = @seleced_piece.game.pieces
+		selected_piece = Piece.find(params[:game_id])
+		@pieces = @selected_piece.game.pieces
 	end
 
 	def update
@@ -12,6 +12,12 @@ class PiecesController < ApplicationController
 		@piece.update_attributes(:x_position => row, :y_position => col)
 		redirect_to game_path
 	end
+
+	# $("piece").click(function (event) {
+	# 	var movePiece = event.target;
+	# 	$("piece").removeClass("selected_piece");
+	# 	$("movePiece").addClass("selected_piece");
+	# 	});
 
 	private
 
