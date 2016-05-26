@@ -21,7 +21,7 @@ FactoryGirl.define do
     
   end
   factory :game do
-    
+    name "testGame"
   end
   factory :user do
     sequence :email do |n|
