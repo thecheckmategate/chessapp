@@ -3,12 +3,19 @@ class Piece < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :game
 
+	def color
+	end
+
+	def color_check
+		color ? 'white_id' : 'black_id'
+	end
+
 	def executable_move?(x_target, y_target)
-		return false unless valid_move?(x_target, y_target) 
-		return false unless on_board?(x_target, y_target) 
-		return false if obstacle_between?(x_target, y_target) 
-		return false if no_move?(x_target, y_target) 
-		return true 
+		return false unless valid_move?(x_target, y_target)
+		return false unless on_board?(x_target, y_target)
+		return false if obstacle_between?(x_target, y_target)
+		return false if no_move?(x_target, y_target)
+		return true
 	end
 
 	def no_move?(x_target, y_target)
@@ -19,12 +26,12 @@ class Piece < ActiveRecord::Base
 		obstacle_list = []
 		Piece.all.each do |piece|
 			obstacle_list.append([piece.x_position, piece.y_position])
-		end 
+		end
 
 		if ((x_position - x_target).abs == (y_position - y_target).abs)
 			return false unless (diagonal_path(x_target, y_target) & obstacle_list).empty?
-		else 
-			return false unless (rectilinear_path(x_target, y_target) & obstacle_list).empty? # 
+		else
+			return false unless (rectilinear_path(x_target, y_target) & obstacle_list).empty? #
 		end
 	end
 
@@ -37,9 +44,9 @@ class Piece < ActiveRecord::Base
 	end
 
 	def diagonal_path(x_target, y_target)
-		
+
 		current_x_position = self.x_position
-		
+
 		current_y_position = self.y_position
 
 		if x_target > current_x_position
@@ -59,7 +66,7 @@ class Piece < ActiveRecord::Base
 
 
 		diagonal_collection  = []
-		
+
 
 		until (current_x_position -  x_target).abs == 0 && (current_y_position - y_target) == 0
 			diagonal_collection << [current_x_position, current_y_position]
@@ -69,17 +76,17 @@ class Piece < ActiveRecord::Base
 
 		return diagonal_collection
 
-end
+	end
 
 
 def rectilinear_path(x_target, y_target)
-	
-	current_x_position = self.x_position
-	
-	current_y_position = self.y_position
-	
 
-	
+	current_x_position = self.x_position
+
+	current_y_position = self.y_position
+
+
+
 	rectilinear_collection = Array.new()
 
 
@@ -89,7 +96,7 @@ def rectilinear_path(x_target, y_target)
 			x_increment = 1
 		else
 			x_increment = -1
-		end
+	end
 
 		current_x_position += x_increment
 
@@ -104,7 +111,7 @@ def rectilinear_path(x_target, y_target)
 			y_increment = 1
 		else
 			y_increment = -1
-		end
+	end
 
 		current_y_position += y_increment
 
@@ -112,10 +119,10 @@ def rectilinear_path(x_target, y_target)
         	rectilinear_collection << [current_x_position, current_y_position]
         	current_y_position += y_increment
       	end
-    end
+  	end
 
     return rectilinear_collection
 
- end
+end
 
 end
