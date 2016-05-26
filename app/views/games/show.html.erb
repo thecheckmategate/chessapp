@@ -12,9 +12,9 @@
 
     <% 8.times do |col_index|  %>
       <td>
-        <% piece = Piece.find_by_position(col_index, row_index, 6) %>
+        <% piece = Piece.find_by_position(col_index, row_index, @game.id) %>
         <% if piece.present? %>
-          <%= piece.to_ascii_piece %>
+          <span class="piece"><%= piece.to_ascii_piece.html_safe %></span>
         <% end %>
       </td>
     <% end %>
