@@ -12,7 +12,6 @@ class PiecesController < ApplicationController
 		row = params[:x_position]
 		col = params[:y_position]
 		@piece.update_attributes(:x_position => row, :y_position => col)
-		redirect_to game_path(@piece.game)
 	end
 
 	private
