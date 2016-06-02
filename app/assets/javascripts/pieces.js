@@ -8,9 +8,17 @@ $(function() {
       var droppedOn = $(this);
       $(droppedOn).droppable("disable");
       $(dropped).parent().droppable("enable");
-      $(dropped).detach().css({top: 0, left: 0}).appendTo(droppedOn);   
+      $(dropped).detach().css({top: 0, left: 0}).appendTo(droppedOn);
+      var data = JSON.parse(dropped.attr("data"));
+      $.ajax({
+        url: '/games/'+ data.game_id + '/pieces/' + data.id,
+        type: 'PUT',
+        success: function(result) {
+            // Do something with the result
+        }
+      });
   	}
-	});   
+	});
 
 });
 
@@ -26,7 +34,7 @@ $(function() {
 //       $(dropped).parent().droppable("enable");
 //       $(dropped).detach().css({top: 0, left: 0}).appendTo(droppedOn);
 //   	}
-// 	});   
+// 	});
 
 // 	$('td').not('td:empty').droppable("disable");
 
