@@ -11,7 +11,15 @@ class PiecesController < ApplicationController
 		@piece = Piece.find(params[:id])
 		row = params[:x_position]
 		col = params[:y_position]
+
+		if @piece && row && col
 		@piece.update_attributes(:x_position => row, :y_position => col)
+		end
+
+		respond_to do |format|
+			format.html { render :show }
+			format.json { render json: 'pieces.js' }
+		end
 	end
 
 	private

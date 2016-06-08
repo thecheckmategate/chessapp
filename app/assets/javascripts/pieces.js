@@ -22,6 +22,7 @@ $(function() {
       $.ajax({
         url: url,
         type: 'PUT',
+        dataType: 'json',
         data: data,
         success: function(result) {
           console.log(result);
