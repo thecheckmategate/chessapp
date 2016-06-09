@@ -17,16 +17,17 @@ $(function() {
       // Send the new coordinates to the controller
       var data = JSON.parse(dropped.attr("data"));
       var url = "/games/" + data.game_id + "/pieces/" + data.id;
-      data.x_position = 0 // Add x position here, need to obtain from board
-      data.y_position = 0 // Add y position here, need to obtain from board
+      data.x_position = null; // Add x position here, need to obtain from board
+      data.y_position = null; // Add y position here, need to obtain from board
       $.ajax({
         url: url,
         type: 'PUT',
         dataType: 'json',
         data: data,
-        success: function(result) {
-          console.log(result);
-        }
+      }).done(function(data) {
+        console.log("done", data);
+      }).fail(function(error) {
+        console.log("error", error);
       });
     }
   });
