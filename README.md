@@ -1,32 +1,19 @@
-## README
+# Chess Application - Agile Team Development
 
 [application on Heroku](https://pawnstars-firehose.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This chess application was built as part of the Firehose Project.
 
-Things you may want to cover:
+The following languages, frameworks and tools were used to create this application.
 
-* Ruby version
+* Ruby on Rails
+* Postgresql database
+* Heroku
+* RSpec testing
+* JSON
+* AJAX
+* jQuery
 
-* System dependencies
+## Test the application
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+You can download or clone the files to run this application locally. You will need to know how to navigate the Rails framework as the functionality is spread across the files in the Controller, Models and Views folders.
