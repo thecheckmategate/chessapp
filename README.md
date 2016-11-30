@@ -2,17 +2,17 @@
 
 [application on Heroku](https://pawnstars-firehose.herokuapp.com/)
 
-This chess application was built as part of the Firehose Project.
+This chess application was built as part of the Firehose Project. Under the guidance of a senior software engineer, we had weekly Agile team meetings for code reviews, sprint planning, and feature assignments. Users are able to create accounts and play games against each other.
 
-The following languages, frameworks and tools were used to create this application.
+The following technologies were used to create this application.
 
 * Ruby on Rails
-* Postgresql database
-* Heroku
-* RSpec testing
-* JSON
-* AJAX
-* jQuery
+* Bootstrap framework
+* PostgreSQL database
+* Heroku hosting
+* RSpec testing driven development
+* AJAX requests
+* jQuery for drag and drop functionality
 
 ## Test the application
 
